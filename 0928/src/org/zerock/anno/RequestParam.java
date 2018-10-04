@@ -6,13 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-//타입과 메소드에서 사용하겠다고 지정해주는 코드이다.
-@Target({ElementType.TYPE, 
-	     ElementType.METHOD })
-public @interface BGM {
+//파라미터에서만 사용하겠다고 지정해주는 것이다.
+@Target({ ElementType.PARAMETER })
+public @interface RequestParam {
 
-	
-	String value();
-	int duration() default 30;
-	
+	public String value();
 }
